@@ -11,7 +11,9 @@ import Feature from "./Components/Feature";
 import ProductsPage from "./Components/ProductsPage";
 export default function Home() {
   return (
+
 <div>
+  
  <HomeComponent />
  <Navbar />
  <Hero />

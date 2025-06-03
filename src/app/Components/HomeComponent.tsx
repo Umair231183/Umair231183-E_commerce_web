@@ -16,7 +16,11 @@ function HomeComponent() {
             sizes="100vw"
           />
     </div>
+    <div>
+
     </div>
+    </div>
+   
   );
 }
 

@@ -1,9 +1,11 @@
 "use client";
 import React, { useState } from 'react';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const router = useRouter();
 
   return (
     <div>
@@ -32,10 +34,10 @@ function Navbar() {
             <Link href="/Services">Services</Link>
           </li>
           <li className="hover:text-gray-300 cursor-pointer">
-            <Link href="/Man">Man</Link>
-          </li>
-          <li className="hover:text-gray-300 cursor-pointer">
-            <Link href="/Contact">Contact</Link>
+            <Link href="/Components/contact" className="flex items-center justify-center">
+            <button>Contact</button>
+            </Link>
+            
           </li>
         </ul>
 

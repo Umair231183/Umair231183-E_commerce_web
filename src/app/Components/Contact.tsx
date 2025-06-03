@@ -1,12 +1,29 @@
-import React from 'react';
+"use client"
+import React from "react";
+import link from 'next/link';
+import 'next/navigation';
+import { useEffect, useState } from 'react';
 
 function Contact() {
+  
+ // useEffect(() => {
+    // Simulate a successful form submission
+   // const timer = setTimeout(() => {
+   //   setSuccess(true);
+   // }, 5000);
+
+   // return () => clearTimeout(timer);
+  //}, []);
+
+    ;
+  
+
   return (
     <div className="container mx-auto py-10">
       <h1 className="text-2xl font-bold mb-4">Contact Us</h1>
       <form className="space-y-4">
         <div>
-          <label htmlFor="name" className="block text-gray-700 text-sm font-bold mb-2">
+          <label htmlFor="name" className="block  text-gray-700 text-sm font-bold mb-2">
             Name:
           </label>
           <input
@@ -42,7 +59,7 @@ function Contact() {
           type="submit"
           className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
         >
-          Send
+          Send 
         </button>
       </form>
     </div>
