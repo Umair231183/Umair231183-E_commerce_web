@@ -12,11 +12,11 @@ interface Product {
 }
 
 interface CategoryPageProps {
-  params: Promise<{ category: string }>; // Next.js 14+ requires params to be treated as async
+  params: Promise<{ category: string }>; 
 }
 
 export default function CategoryPage({ params }: CategoryPageProps) {
-  const { category } = use(params); // Unwrap the Promise here ✅
+  const { category } = use(params); 
 
   const [products, setProducts] = useState<Product[]>([]);
   const [searchTerm, setSearchTerm] = useState('');
