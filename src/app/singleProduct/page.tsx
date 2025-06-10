@@ -15,28 +15,34 @@ export default async function ProductList() {
   const products: Product[] = res.data.products;
 
   return (
-    <div className="max-w-4xl mx-auto px-4 py-8">
-      <h1 className="text-3xl font-bold mb-6">Products</h1>
-      <ul className="space-y-4">
+    <div className="max-w-6xl mx-auto px-4 py-12 mt-50">
+      <h1 className="text-4xl font-bold mb-8 text-center">All Products</h1>
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
         {products.map((product) => (
-          <li key={product.id}>
-            <Link href={`/products/${product.id}`}>
-              <div className="flex items-center gap-4 p-4 border rounded hover:shadow">
-                <img
-                  src={product.thumbnail || product.image}
-                  alt={product.title}
-                  width={60}
-                  height={60}
-                  className="rounded object-cover"
-                />
-                <span className="text-lg">
-                  {product.title} - ${product.price}
-                </span>
-              </div>
+          <div
+            key={product.id}
+            className="border rounded-lg shadow hover:shadow-lg transition duration-300 overflow-hidden"
+          >
+            <Link href={`./singleProduct/${product.id}`}>
+            <img
+              src={product.thumbnail || product.image}
+              alt={product.title}
+              className="w-full h-48 object-cover"
+            />
             </Link>
-          </li>
+            <div className="p-4">
+              <h2 className="text-xl font-semibold mb-2">{product.title}</h2>
+              <p className="text-lg font-bold text-blue-600 mb-4">${product.price}</p>
+              <Link
+                href={`/products/${product.id}`}
+                className="inline-block bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700"
+              >
+                View Details
+              </Link>
+            </div>
+          </div>
         ))}
-      </ul>
+      </div>
     </div>
   );
 }

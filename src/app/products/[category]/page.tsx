@@ -2,6 +2,7 @@
 
 import React, { use, useEffect, useState } from 'react';
 import Link from 'next/link';
+import ProductList from '@/app/singleProduct/page';
 
 interface Product {
   id: number;
@@ -84,7 +85,7 @@ export default function CategoryPage({ params }: CategoryPageProps) {
                 key={product.id}
                 className="bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700"
               >
-                <Link href={`/products/${product.id}`}>
+                <Link href={`/singleProduct/${product.id}`}>
                   <div className="w-full h-64 overflow-hidden rounded-t-lg">
                     <img
                       src={product.thumbnail || product.image}

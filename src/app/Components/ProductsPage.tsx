@@ -22,21 +22,23 @@ const  ProductsPage =  async () => { // Rename the component
       <h1 className="text-3xl font-bold mb-8">Our Products</h1>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
         {products.map((product) => (
-          <Link href={`/products/${product.id}`} key={product.id} className="block"> {/* Changed href */}
+            // <Link href={`/singleProduct/${product.id}`} key={product.id} className="block"> {/* Changed href */}
           <div className="rounded-md shadow-md overflow-hidden">
               <div className="relative h-64 w-full">
+                <Link href={`/singleProduct/${product.id}`} key={product.id} className='block'>
                 <img
                   src={product.thumbnail}
                   alt={product.title}
                   className="object-cover object-center"
                 />
+                </Link>
               </div>
               <div className="p-4">
                 <h2 className="text-xl font-semibold text-gray-800">{product.title}</h2>
                 <p className="text-gray-600">{product.price}$ PKR</p>
               </div>
               </div>
-            </Link>
+            // {/* </Link> */}
         ))}
         </div>
       </div>
